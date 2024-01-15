@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package service_component;
+
+option go_package = "storage-service/pb;pb";
+
+message GetRequest {
+  string key = 1;
+}
+
+message GetResponse {
+  string value = 2;
+}
+
+message SetRequest {
+  string key = 1;
+  string value = 2;
+}
+
+message SubscribeRequest {
+  string ip = 1;
+  bool is_async = 2;
+  string password = 3;
+}
+
+message SendDataRequest {
+  map<string, string> data = 1;
+  string password = 2;
+}

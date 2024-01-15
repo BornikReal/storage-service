@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package service_component;
+
+option go_package = "storage-service/pb;pb";
+
+import "requests.proto";
+import "google/protobuf/empty.proto";
+import "google/api/annotations.proto";
+
+service StorageService {
+  rpc Get(GetRequest) returns(GetResponse) {
+    option (google.api.http) = {
+      get: "/kv"
+    };
+  }
+  rpc Set(SetRequest) returns(google.protobuf.Empty) {
+    option (google.api.http) = {
+      post: "/kv"
+    };
+  }
+  rpc Subscribe (SubscribeRequest) returns(google.protobuf.Empty) {
+    option (google.api.http) = {
+      post: "/subscribe"
+    };
+  }
+  rpc SendData (SendDataRequest) returns(google.protobuf.Empty) {
+    option (google.api.http) = {
+      post: "/send_data"
+      body: "*"
+    };
+  }
+}

@@ -1,0 +1,58 @@
+version: "3"
+
+services:
+  master_1:
+    build:
+      context: ./
+      dockerfile: ./build/Dockerfile
+    container_name: master_1
+    environment:
+      SERVICE_HTTP_ADDRESS: :7001
+      SERVICE_GRPC_ADDRESS: :7002
+      STORAGE_TYPE: lsm
+      REPLICA_TYPE: master
+    ports:
+      - "7001:7001"
+      - "7002:7002"
+
+  replica_1:
+    build:
+      context: ./
+      dockerfile: ./build/Dockerfile
+    container_name: replica_1
+    environment:
+      SERVICE_HTTP_ADDRESS: :7011
+      SERVICE_GRPC_ADDRESS: :7012
+      STORAGE_TYPE: lsm
+      REPLICA_TYPE: sync_replica
+    ports:
+      - "7011:7011"
+      - "7012:7012"
+
+  master_2:
+    build:
+      context: ./
+      dockerfile: ./build/Dockerfile
+    container_name: master_2
+    environment:
+      SERVICE_HTTP_ADDRESS: :8001
+      SERVICE_GRPC_ADDRESS: :8002
+      STORAGE_TYPE: lsm
+      REPLICA_TYPE: master
+    ports:
+      - "8001:8001"
+      - "8002:8002"
+
+  replica_2:
+    build:
+      context: ./
+      dockerfile: ./build/Dockerfile
+    container_name: replica_2
+    environment:
+      SERVICE_HTTP_ADDRESS: :8011
+      SERVICE_GRPC_ADDRESS: :8012
+      STORAGE_TYPE: lsm
+      REPLICA_TYPE: sync_replica
+    ports:
+      - "8011:8011"
+      - "8012:8012"

@@ -187,7 +187,7 @@ func RegisterStorageServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/service_component.StorageService/Get", runtime.WithHTTPPathPattern("/kv"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/storage_service.StorageService/Get", runtime.WithHTTPPathPattern("/kv"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -212,7 +212,7 @@ func RegisterStorageServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/service_component.StorageService/Set", runtime.WithHTTPPathPattern("/kv"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/storage_service.StorageService/Set", runtime.WithHTTPPathPattern("/kv"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -237,7 +237,7 @@ func RegisterStorageServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/service_component.StorageService/Subscribe", runtime.WithHTTPPathPattern("/subscribe"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/storage_service.StorageService/Subscribe", runtime.WithHTTPPathPattern("/subscribe"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -262,7 +262,7 @@ func RegisterStorageServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/service_component.StorageService/SendData", runtime.WithHTTPPathPattern("/send_data"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/storage_service.StorageService/SendData", runtime.WithHTTPPathPattern("/send_data"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -326,7 +326,7 @@ func RegisterStorageServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/service_component.StorageService/Get", runtime.WithHTTPPathPattern("/kv"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/storage_service.StorageService/Get", runtime.WithHTTPPathPattern("/kv"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -348,7 +348,7 @@ func RegisterStorageServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/service_component.StorageService/Set", runtime.WithHTTPPathPattern("/kv"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/storage_service.StorageService/Set", runtime.WithHTTPPathPattern("/kv"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -370,7 +370,7 @@ func RegisterStorageServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/service_component.StorageService/Subscribe", runtime.WithHTTPPathPattern("/subscribe"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/storage_service.StorageService/Subscribe", runtime.WithHTTPPathPattern("/subscribe"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -392,7 +392,7 @@ func RegisterStorageServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/service_component.StorageService/SendData", runtime.WithHTTPPathPattern("/send_data"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/storage_service.StorageService/SendData", runtime.WithHTTPPathPattern("/send_data"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return

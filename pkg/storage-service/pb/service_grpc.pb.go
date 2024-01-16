@@ -39,7 +39,7 @@ func NewStorageServiceClient(cc grpc.ClientConnInterface) StorageServiceClient {
 
 func (c *storageServiceClient) Get(ctx context.Context, in *GetRequest, opts ...grpc.CallOption) (*GetResponse, error) {
 	out := new(GetResponse)
-	err := c.cc.Invoke(ctx, "/service_component.StorageService/Get", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/storage_service.StorageService/Get", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -48,7 +48,7 @@ func (c *storageServiceClient) Get(ctx context.Context, in *GetRequest, opts ...
 
 func (c *storageServiceClient) Set(ctx context.Context, in *SetRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/service_component.StorageService/Set", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/storage_service.StorageService/Set", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -57,7 +57,7 @@ func (c *storageServiceClient) Set(ctx context.Context, in *SetRequest, opts ...
 
 func (c *storageServiceClient) Subscribe(ctx context.Context, in *SubscribeRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/service_component.StorageService/Subscribe", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/storage_service.StorageService/Subscribe", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -66,7 +66,7 @@ func (c *storageServiceClient) Subscribe(ctx context.Context, in *SubscribeReque
 
 func (c *storageServiceClient) SendData(ctx context.Context, in *SendDataRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/service_component.StorageService/SendData", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/storage_service.StorageService/SendData", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -123,7 +123,7 @@ func _StorageService_Get_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/service_component.StorageService/Get",
+		FullMethod: "/storage_service.StorageService/Get",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(StorageServiceServer).Get(ctx, req.(*GetRequest))
@@ -141,7 +141,7 @@ func _StorageService_Set_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/service_component.StorageService/Set",
+		FullMethod: "/storage_service.StorageService/Set",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(StorageServiceServer).Set(ctx, req.(*SetRequest))
@@ -159,7 +159,7 @@ func _StorageService_Subscribe_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/service_component.StorageService/Subscribe",
+		FullMethod: "/storage_service.StorageService/Subscribe",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(StorageServiceServer).Subscribe(ctx, req.(*SubscribeRequest))
@@ -177,7 +177,7 @@ func _StorageService_SendData_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/service_component.StorageService/SendData",
+		FullMethod: "/storage_service.StorageService/SendData",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(StorageServiceServer).SendData(ctx, req.(*SendDataRequest))
@@ -189,7 +189,7 @@ func _StorageService_SendData_Handler(srv interface{}, ctx context.Context, dec 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var StorageService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "service_component.StorageService",
+	ServiceName: "storage_service.StorageService",
 	HandlerType: (*StorageServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

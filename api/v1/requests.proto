@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package service_component;
+package storage_service;
 
 option go_package = "storage-service/pb;pb";
 
